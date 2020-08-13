@@ -1,0 +1,104 @@
+#Models: 7
+ID 0
+FILE ".\\Models\\Woman1.nfg"
+ID 1
+FILE ".\\Models\\Woman2.nfg" 
+ID 2
+FILE ".\\Models\\Terrain.nfg"
+ID 3
+FILE ".\\Models\\SkyBox.nfg"
+ID 4
+FILE ".\\Models\\Bila.nfg"
+ID 5
+FILE ".\\Models\\fire.nfg"
+ID 6
+FILE ".\\Models\\water.nfg"
+
+#2D_Textures: 11
+ID 0
+FILE ".\\Textures\\Woman1.tga"
+MODE 1
+ID 1
+FILE ".\\Textures\\Woman2.tga"
+MODE 1
+ID 2
+FILE ".\\Textures\\Grass.tga"
+MODE 1
+ID 3
+FILE ".\\Textures\\Dirt.tga"
+MODE 1
+ID 4
+FILE ".\\Textures\\Rock.tga"
+MODE 1
+ID 5
+FILE ".\\Textures\\Terrain_blend_map.tga"
+MODE 1
+ID 6
+FILE ".\\Textures\\fire3.tga"
+MODE 0
+ID 7
+FILE ".\\Textures\\fire_mask.tga"
+MODE 0
+ID 8
+FILE ".\\Textures\\DisplacementMap.tga"
+MODE 1
+ID 9
+FILE ".\\Textures\\NormalMap.tga"
+MODE 1
+ID 10
+FILE ".\\Textures\\WaterNormal.tga"
+MODE 1
+
+#Cube_Textures: 1
+ID 0
+FILE ".\\Textures\\envMap.tga"
+
+#Shaders: 8
+ID 0
+VS ".\\Shaders\\TriangleShaderVS.vs"
+FS ".\\Shaders\\TriangleShaderFS.fs"
+STATES 2
+0
+1
+ID 1
+VS ".\\Shaders\\TerrainShaderVS.vs"
+FS ".\\Shaders\\TerrainShaderFS.fs"
+STATES 2
+0
+1
+ID 2
+VS ".\\Shaders\\SkyBoxShaderVS.vs"
+FS ".\\Shaders\\SkyBoxShaderFS.fs"
+STATES 2
+0
+1
+ID 3
+VS ".\\Shaders\\ReflectionShaderVS.vs"
+FS ".\\Shaders\\ReflectionShaderFS.fs"
+STATES 2
+0
+1
+ID 4
+VS ".\\Shaders\\FireShaderVS.vs"
+FS ".\\Shaders\\FireShaderFS.fs"
+STATES 2
+0
+1
+ID 5
+VS ".\\Shaders\\PhongLightShaderVS.vs"
+FS ".\\Shaders\\PhongLightShaderFS.fs"
+STATES 2
+0
+1
+ID 6
+VS ".\\Shaders\\NormalMapShaderVS.vs"
+FS ".\\Shaders\\NormalMapShaderFS.fs"
+STATES 2
+0
+1
+ID 7
+VS ".\\Shaders\\WaterShaderVS.vs"
+FS ".\\Shaders\\WaterShaderFS.fs"
+STATES 2
+0
+1

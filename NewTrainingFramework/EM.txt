@@ -1,0 +1,196 @@
+#Shaders: 6
+ID 0
+VSFile: ".\\Shaders\\EBW.vs"
+FSFile: ".\\Shaders\\EBW.fs"
+ID 1
+VSFile: ".\\Shaders\\EffectBlurVS.vs"
+FSFile: ".\\Shaders\\EffectBlurFS.fs"
+ID 2
+VSFile: ".\\Shaders\\EffectBloomIdentifyPixelsVS.vs"
+FSFile: ".\\Shaders\\EffectBloomIdentifyPixelsFS.fs"
+ID 3
+VSFile: ".\\Shaders\\EffectBloomVS.vs"
+FSFile: ".\\Shaders\\EffectBloomFS.fs"
+ID 4
+VSFile: ".\\Shaders\\EffectDOF_BlurVS.vs"
+FSFile: ".\\Shaders\\EffectDOF_BlurFS.fs"
+ID 5
+VSFile: ".\\Shaders\\EffectDOF_FinalVS.vs"
+FSFile: ".\\Shaders\\EffectDOF_FinalFS.fs"
+
+#FBO
+NoFBO 4
+
+#Effects: 4
+ID 0
+Name BW
+NoPasses: 1
+PassID 0
+PassName BW
+   ShaderID 0
+   TexturesCOLOR: 1, 0, 0
+   TexturesDEPTH: 0, 0, 0
+   Target: 0
+   NumOtherData: 1
+   0.0
+ID 1
+Name BLUR
+NoPasses: 5
+PassID 0
+PassName BLUR
+   ShaderID 1
+   TexturesCOLOR: 1, 0, 0
+   TexturesDEPTH: 0, 0, 0
+   Target: 2
+   NumOtherData: 1
+   5.0
+PassID 1
+PassName BLUR
+   ShaderID 1
+   TexturesCOLOR: 2, 0, 0
+   TexturesDEPTH: 0, 0, 0
+   Target: 3
+   NumOtherData: 1
+   17.0
+PassID 2
+PassName BLUR
+   ShaderID 1
+   TexturesCOLOR: 3, 0, 0
+   TexturesDEPTH: 0, 0, 0
+   Target: 2
+   NumOtherData: 1
+   31.0
+PassID 3
+PassName BLUR
+   ShaderID 1
+   TexturesCOLOR: 2, 0, 0
+   TexturesDEPTH: 0, 0, 0
+   Target: 3
+   NumOtherData: 1
+   43.0
+PassID 4
+PassName BLUR
+   ShaderID 1
+   TexturesCOLOR: 3, 0, 0
+   TexturesDEPTH: 0, 0, 0
+   Target: 0
+   NumOtherData: 1
+   63.0
+ID 2
+Name Bloom
+NoPasses: 7
+PassID 0
+PassName PREBLOOM
+   ShaderID 2
+   TexturesCOLOR: 1, 0, 0
+   TexturesDEPTH: 0, 0, 0
+   Target: 2
+   NumOtherData: 1
+   0.5
+PassID 1
+PassName BLUR
+   ShaderID 1
+   TexturesCOLOR: 2, 0, 0
+   TexturesDEPTH: 0, 0, 0
+   Target: 3
+   NumOtherData: 1
+   5.0
+PassID 2
+PassName BLUR
+   ShaderID 1
+   TexturesCOLOR: 3, 0, 0
+   TexturesDEPTH: 0, 0, 0
+   Target: 2
+   NumOtherData: 1
+   9.0
+PassID 3
+PassName BLUR
+   ShaderID 1
+   TexturesCOLOR: 2, 0, 0
+   TexturesDEPTH: 0, 0, 0
+   Target: 3
+   NumOtherData: 1
+   17.0
+PassID 4
+PassName BLUR
+   ShaderID 1
+   TexturesCOLOR: 3, 0, 0
+   TexturesDEPTH: 0, 0, 0
+   Target: 2
+   NumOtherData: 1
+   31.0
+PassID 5
+PassName BLUR
+   ShaderID 1
+   TexturesCOLOR: 2, 0, 0
+   TexturesDEPTH: 0, 0, 0
+   Target: 3
+   NumOtherData: 1
+   43.0
+PassID 6
+PassName PostBloom
+   ShaderID 3
+   TexturesCOLOR: 1, 3, 0
+   TexturesDEPTH: 0, 0, 0
+   Target: 0
+   NumOtherData: 1
+   1.5
+ID 3
+Name DOF
+NoPasses: 4
+PassID 0
+PassName DOF_BLUR
+   ShaderID 4
+   TexturesCOLOR: 1, 0, 0
+   TexturesDEPTH: 1, 0, 0
+   Target: 2
+   NumOtherData: 5
+   3.0
+   0.1
+   500.0
+   20.0
+   0.9
+PassID 1
+PassName DOF_BLUR
+   ShaderID 4
+   TexturesCOLOR: 2, 0, 0
+   TexturesDEPTH: 1, 0, 0
+   Target: 3
+   NumOtherData: 5
+   5.0
+   0.1
+   500.0
+   20.0
+   0.9
+PassID 2
+PassName DOF_BLUR
+   ShaderID 4
+   TexturesCOLOR: 3, 0, 0
+   TexturesDEPTH: 1, 0, 0
+   Target: 2
+   NumOtherData: 5
+   9.0
+   0.1
+   500.0
+   20.0
+   0.9
+PassID 3
+PassName DOF_BLUR
+   ShaderID 5
+   TexturesCOLOR: 1, 2, 0
+   TexturesDEPTH: 1, 0, 0
+   Target: 0
+   NumOtherData: 5
+   16.0
+   0.1
+   500.0
+   20.0
+   0.9
+
+
+
+
+
+
+// Separar los valores de las texturas en color y depth
+// poner los valores de OtherData uno por renglon.
